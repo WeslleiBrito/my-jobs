@@ -6,7 +6,7 @@ export class AccountDatabase extends BaseDatabase{
 
     protected static TABLE_ACCOUNT = "accounts"
 
-    public createAccount = async (input: InputCreateAccountDB): Promise<void> => {
+    public signup = async (input: InputCreateAccountDB): Promise<void> => {
 
         await AccountDatabase.connection(AccountDatabase.TABLE_ACCOUNT).insert(input)
     }

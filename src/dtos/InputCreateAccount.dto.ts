@@ -6,6 +6,9 @@ export interface InputCreateAccountDTO {
     password: string
 }
 
+export interface OutputCreateAccoutDTO {
+    token: string
+}
 
 export const inputCreateAccountSchema = z.object(
     {
