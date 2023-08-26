@@ -26,7 +26,11 @@ export class Account {
         return this.createdAt
     }
 
-    public setPassword = (): string => {
-        return this.password
+    public setPassword = (newPassword: string): void => {
+        this.password = newPassword
+    }
+
+    public setUserName = (newUserName: string): void => {
+        this.userName = newUserName
     }
 }
