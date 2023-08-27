@@ -1,16 +1,16 @@
 import z from 'zod'
 
-export interface InputCreateAccountDTO {
+export interface InputSignupAccountDTO {
     userName: string,
     email: string,
     password: string
 }
 
-export interface OutputCreateAccoutDTO {
+export interface OutputSignupAccoutDTO {
     token: string
 }
 
-export const inputCreateAccountSchema = z.object(
+export const inputSignupAccountSchema = z.object(
     {
         userName: z.string({required_error: "O nome do usuário é obrigatório.", invalid_type_error: "O nome deve ser enviado em uma string."}).min(3, {message: "Um nome deve ter no mínimo três caracteres."}),
         email: z.string({required_error: "O email é obrigatório.", invalid_type_error: "O email deve ser enviado em uma string."}).email({message: "Email inválido!"}),

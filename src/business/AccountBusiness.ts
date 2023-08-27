@@ -1,5 +1,5 @@
 import { AccountDatabase } from "../database/AccountDatabase";
-import { InputCreateAccountDTO, OutputCreateAccoutDTO } from "../dtos/InputCreateAccount.dto";
+import { InputSignupAccountDTO, OutputSignupAccoutDTO } from "../dtos/InputSignupAccount.dto";
 import { ConflictError } from "../errors/ConflictError";
 import { Account } from "../models/Account";
 import { HashManager } from "../services/HashManager";
@@ -16,7 +16,7 @@ export class AccountBusiness {
         private hashManager: HashManager
     ){}
 
-    public signup = async (input: InputCreateAccountDTO): Promise<OutputCreateAccoutDTO> => {
+    public signup = async (input: InputSignupAccountDTO): Promise<OutputSignupAccoutDTO> => {
         
         const {userName, email, password} = input
 

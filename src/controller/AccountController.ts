@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { BaseError } from "../errors/BaseError";
 import { ZodError } from "zod";
 import { AccountBusiness } from "../business/AccountBusiness";
-import { InputCreateAccountDTO, inputCreateAccountSchema } from "../dtos/InputCreateAccount.dto";
+import { inputSignupAccountSchema } from "../dtos/InputSignupAccount.dto";
 
 
 export class AccountController {
@@ -16,7 +16,7 @@ export class AccountController {
         
         try {
             
-            const input = inputCreateAccountSchema.parse(
+            const input = inputSignupAccountSchema.parse(
                 {
                     userName: req.body.userName,
                     email: req.body.email,
