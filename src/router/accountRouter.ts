@@ -20,3 +20,5 @@ const newAccountController = new AccountController(
 )
 
 accountRouter.post('/signup', newAccountController.signup)
+accountRouter.get('/login', newAccountController.login)
+accountRouter.post('/signup/edit-account', newAccountController.editAccount)

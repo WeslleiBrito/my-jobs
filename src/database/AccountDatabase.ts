@@ -17,4 +17,20 @@ export class AccountDatabase extends BaseDatabase{
 
         return result
     }
+
+    public editAccount = async (input: inputEditAccountDB) => {
+        
+        await AccountDatabase.connection(AccountDatabase.TABLE_ACCOUNT).update(
+            {
+                user_name: input.user_name,
+                password: input.newPassword
+            }
+        ).where({id: input.id})
+    }
+}
+
+export type inputEditAccountDB = {
+    id: string,
+    user_name: string,
+    newPassword: string
 }

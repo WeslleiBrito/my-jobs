@@ -1,3 +1,4 @@
+import { ACCOUNT_ROLES } from "../types/types"
 
 export class Account {
 
@@ -6,6 +7,7 @@ export class Account {
         private userName: string,
         private email: string,
         private password: string,
+        private role: ACCOUNT_ROLES,
         private createdAt: string
     ){}
 
@@ -22,6 +24,11 @@ export class Account {
     public getPassword = (): string => {
         return this.password
     }
+
+    public getRole = (): string => {
+        return this.role
+    }
+    
     public getCreatedAt = (): string => {
         return this.createdAt
     }
