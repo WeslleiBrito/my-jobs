@@ -23,14 +23,14 @@ export class AccountDatabase extends BaseDatabase{
         await AccountDatabase.connection(AccountDatabase.TABLE_ACCOUNT).update(
             {
                 user_name: input.user_name,
-                password: input.password
+                password: input.newPassword
             }
         ).where({id: input.id})
     }
 }
 
-type inputEditAccountDB = {
+export type inputEditAccountDB = {
     id: string,
     user_name: string,
-    password: string
+    newPassword: string
 }

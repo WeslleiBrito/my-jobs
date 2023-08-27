@@ -20,4 +20,4 @@ export const inputSignupAccountSchema = z.object(
             } 
         )
     }
-)
+).transform(data => data as InputSignupAccountDTO)
